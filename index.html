@@ -21,18 +21,19 @@
   <meta property="og:site_name" content="Vero Narguile">
   <meta property="og:title" content="Vero Narguile — Tabacaria em São Paulo">
   <meta property="og:description" content="Narguile, essências, carvão e acessórios. Monte seu pedido no site e confirme pelo WhatsApp. Entrega ou retirada em São Paulo.">
-  <meta property="og:image" content="./og-image.svg">
+  <meta property="og:url" content="https://brunovrc.github.io/veronarguile/">
+  <meta property="og:image" content="https://brunovrc.github.io/veronarguile/og-image.png">
+  <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Vero Narguile — Tabacaria em São Paulo">
   <meta property="og:locale" content="pt_BR">
-  <!-- Substitua pela URL real ao publicar: <meta property="og:url" content="https://veronarguile.com.br"> -->
 
   <!-- ── TWITTER CARD ───────────────────────────────────────── -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Vero Narguile — Tabacaria em São Paulo">
   <meta name="twitter:description" content="Narguile, essências, carvão e acessórios. Monte seu pedido e confirme pelo WhatsApp.">
-  <meta name="twitter:image" content="./og-image.svg">
+  <meta name="twitter:image" content="https://brunovrc.github.io/veronarguile/og-image.png">
 
   <!-- ── SCHEMA.ORG — LocalBusiness ────────────────────────── -->
   <script type="application/ld+json">
@@ -41,7 +42,8 @@
     "@type": "LocalBusiness",
     "name": "Vero Narguile",
     "description": "Tabacaria em São Paulo com narguile, essências, carvão e acessórios. Pedido pelo WhatsApp.",
-    "image": "./og-image.svg",
+    "image": "https://brunovrc.github.io/veronarguile/og-image.png",
+    "url": "https://brunovrc.github.io/veronarguile/",
     "telephone": "+5511991636125",
     "address": {
       "@type": "PostalAddress",
@@ -714,24 +716,32 @@
   .hours-table td:last-child { color: var(--text); font-weight: 600; font-size: 15px; }
 
   /* ── FOOTER ──────────────────────────────────────────── */
-  #footer {
-    background: var(--surface); border-top: 1px solid var(--border);
-    padding: 52px 0 32px;
-  }
-  .footer-top {
-    display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: start;
-    margin-bottom: 40px;
-  }
-  .footer-logo { height: 34px; width: auto; opacity: .85; }
-  .footer-tagline { font-size: 13px; color: var(--muted); margin-top: 12px; font-weight: 300; line-height: 1.65; }
-  .footer-links { display: flex; flex-direction: column; gap: 10px; align-items: flex-end; }
-  .footer-links a { font-size: 13px; color: var(--muted); transition: color var(--tr); }
-  .footer-links a:hover { color: var(--gold); }
+  #footer { background: var(--surface); border-top: 1px solid var(--border); padding: 72px 0 32px; }
+  .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1.3fr 1fr; gap: 48px; margin-bottom: 52px; }
+  .footer-logo { height: 48px; width: auto; opacity: .92; }
+  .footer-tagline { font-size: 13.5px; color: var(--muted); margin-top: 14px; font-weight: 300; line-height: 1.7; max-width: 220px; }
+  .footer-socials { display: flex; gap: 10px; margin-top: 20px; }
+  .footer-social-link { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 8px; border: 1px solid var(--border-em); background: var(--card); transition: border-color var(--tr), background var(--tr); }
+  .footer-social-link:hover { border-color: var(--gold); background: rgba(201,168,76,.08); }
+  .footer-social-link img { width: 16px; height: 16px; }
+  .footer-col-title { font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--subtle); margin-bottom: 16px; font-family: var(--font-b); }
+  .footer-col-links { display: flex; flex-direction: column; gap: 11px; }
+  .footer-col-links a { font-size: 13.5px; color: var(--muted); text-decoration: none; transition: color var(--tr); }
+  .footer-col-links a:hover { color: var(--text); }
+  .footer-address { font-size: 13px; color: var(--muted); line-height: 1.75; margin-bottom: 20px; font-style: normal; }
+  .footer-hours { font-size: 12.5px; color: var(--muted); }
+  .footer-hours-row { display: flex; justify-content: space-between; padding: 5px 0; border-bottom: 1px solid rgba(37,37,37,.5); gap: 12px; }
+  .footer-hours-row:last-child { border-bottom: none; }
+  .footer-hours-row span:last-child { color: var(--text); font-weight: 500; white-space: nowrap; }
+  .footer-phone-num { font-size: 20px; font-weight: 600; color: var(--text); margin: 6px 0 4px; letter-spacing: -.02em; font-family: var(--font-b); }
+  .footer-phone-sub { font-size: 12.5px; color: var(--subtle); margin-bottom: 18px; line-height: 1.55; }
+  .footer-wa-btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; background: rgba(37,211,102,.1); border: 1px solid rgba(37,211,102,.28); border-radius: 8px; color: #2fce6e; font-size: 13.5px; font-weight: 500; text-decoration: none; transition: background var(--tr), border-color var(--tr); font-family: var(--font-b); }
+  .footer-wa-btn:hover { background: rgba(37,211,102,.18); border-color: rgba(37,211,102,.48); }
+  .footer-wa-btn img { width: 17px; height: 17px; }
   .footer-sep { height: 1px; background: var(--border); margin-bottom: 24px; }
-  .footer-bottom {
-    display: flex; justify-content: space-between; align-items: center;
-    font-size: 12px; color: var(--subtle); flex-wrap: wrap; gap: 8px;
-  }
+  .footer-bottom { display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: var(--subtle); flex-wrap: wrap; gap: 8px; }
+  .footer-bottom a { color: var(--subtle); text-decoration: none; transition: color var(--tr); }
+  .footer-bottom a:hover { color: var(--muted); }
   .footer-age { display: flex; align-items: center; gap: 6px; }
   .footer-age i { color: rgba(201,168,76,.55); }
 
@@ -760,9 +770,12 @@
     #localizacao > .container { padding: 0 24px; }
     .loc-phone { font-size: 24px; }
   }
-  @media (max-width: 960px) {
-    .footer-top { grid-template-columns: 1fr; }
-    .footer-links { align-items: flex-start; flex-direction: row; flex-wrap: wrap; gap: 16px; }
+  @media (max-width: 1080px) {
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px 40px; }
+  }
+  @media (max-width: 560px) {
+    .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+    .footer-bottom { flex-direction: column; align-items: flex-start; gap: 10px; }
   }
 
   @media (max-width: 768px) {
@@ -1124,25 +1137,64 @@
 ══════════════════════════════════════════════════════ -->
 <footer id="footer">
   <div class="container">
-    <div class="footer-top">
+    <div class="footer-grid">
+
+      <!-- Coluna 1: Marca -->
       <div>
         <img src="./logo.svg" alt="Vero Narguile" class="footer-logo">
-        <p class="footer-tagline">
-          Narguile, essências e acessórios.<br>
-          Pedido pelo WhatsApp, simples assim.
-        </p>
+        <p class="footer-tagline">Narguile, essências e acessórios.<br>Pedido pelo WhatsApp, simples assim.</p>
+        <div class="footer-socials">
+          <a href="https://wa.me/5511991636125" class="footer-social-link" aria-label="WhatsApp" target="_blank" rel="noopener">
+            <img src="https://cdn.simpleicons.org/whatsapp/C9A84C" alt="WhatsApp" width="16" height="16">
+          </a>
+          <a href="https://www.instagram.com/veronarguile" class="footer-social-link" aria-label="Instagram" target="_blank" rel="noopener">
+            <img src="https://cdn.simpleicons.org/instagram/C9A84C" alt="Instagram" width="16" height="16">
+          </a>
+        </div>
       </div>
-      <nav class="footer-links" aria-label="Links rápidos">
-        <a href="#como-funciona">Como funciona</a>
-        <a href="#produtos">Produtos</a>
-        <a href="#entrega">Entrega</a>
-        <a href="#localizacao">Localização</a>
-        <a href="#" id="footer-whatsapp">WhatsApp</a>
-      </nav>
+
+      <!-- Coluna 2: Navegação -->
+      <div>
+        <p class="footer-col-title">Navegação</p>
+        <nav class="footer-col-links" aria-label="Links do rodapé">
+          <a href="#como-funciona">Como funciona</a>
+          <a href="#produtos">Produtos</a>
+          <a href="#entrega">Entrega e retirada</a>
+          <a href="#localizacao">Localização</a>
+        </nav>
+      </div>
+
+      <!-- Coluna 3: Endereço e horários -->
+      <div>
+        <p class="footer-col-title">Onde estamos</p>
+        <address class="footer-address">
+          Av. Agenor Couto de Magalhães, 1424<br>
+          Jardim Regina — São Paulo, SP<br>
+          CEP 05174-000
+        </address>
+        <div class="footer-hours">
+          <div class="footer-hours-row"><span>Seg – Qui</span><span>10h – 20h</span></div>
+          <div class="footer-hours-row"><span>Sex – Sáb</span><span>10h – 20h30</span></div>
+          <div class="footer-hours-row"><span>Domingo</span><span>11h – 17h</span></div>
+        </div>
+      </div>
+
+      <!-- Coluna 4: Contato -->
+      <div>
+        <p class="footer-col-title">Contato</p>
+        <p class="footer-phone-num">(11) 99163-6125</p>
+        <p class="footer-phone-sub">Atendimento exclusivo<br>para maiores de 18 anos</p>
+        <a href="https://wa.me/5511991636125?text=Olá%2C%20vim%20pelo%20site%20e%20gostaria%20de%20fazer%20um%20pedido." class="footer-wa-btn" target="_blank" rel="noopener" id="footer-whatsapp">
+          <img src="https://cdn.simpleicons.org/whatsapp/2fce6e" alt="" width="17" height="17">
+          Falar no WhatsApp
+        </a>
+      </div>
+
     </div>
     <div class="footer-sep"></div>
     <div class="footer-bottom">
       <span id="footer-copy">Vero Narguile &copy; 2025</span>
+      <span>Desenvolvido por <a href="https://teczz.com.br" target="_blank" rel="noopener">teczz.com.br</a></span>
       <span class="footer-age">
         <i class="ph-warning-bold"></i>
         Venda permitida somente para maiores de 18 anos
@@ -1356,13 +1408,13 @@ const CONFIG = {
 ───────────────────────────────────────────────────────── */
 const PRODUCTS = [
   // NARGUILES
-  { id: 1,  cat: 'narguiles',  name: 'Narguile Khalil Mamoon Classic', desc: 'Artesanal egípcio, latão maciço com base em vidro borosilicato',     price: 285, img: null },
-  { id: 2,  cat: 'narguiles',  name: 'Narguile Argila Evolution Pro',   desc: 'Corpo em aço inox, base em vidro e mangueira silicone inclusa',       price: 195, img: null },
-  { id: 3,  cat: 'narguiles',  name: 'Narguile Compacto Portátil',      desc: 'Ideal para viagens, desmontável e fácil de transportar',              price: 120, img: null },
+  { id: 1,  cat: 'narguiles',  name: 'Narguile Khalil Mamoon Classic', desc: 'Artesanal egípcio, latão maciço com base em vidro borosilicato',     price: 285, img: './produtos/narguile-khalil.png' },
+  { id: 2,  cat: 'narguiles',  name: 'Narguile Argila Evolution Pro',   desc: 'Corpo em aço inox, base em vidro e mangueira silicone inclusa',       price: 195, img: './produtos/produto-ai-1.png' },
+  { id: 3,  cat: 'narguiles',  name: 'Narguile Compacto Portátil',      desc: 'Ideal para viagens, desmontável e fácil de transportar',              price: 120, img: './produtos/produto-ai-2.png' },
   // ESSÊNCIAS
-  { id: 4,  cat: 'essencias',  name: 'Al Fakher Duplo Maçã 250g',       desc: 'Clássico sabor duplo maçã, fumaça densa e sabor equilibrado',         price: 48,  img: null },
-  { id: 5,  cat: 'essencias',  name: 'Adalya Love 66 200g',             desc: 'Blend de morango, menta e melancia — um dos mais pedidos',            price: 58,  img: null },
-  { id: 6,  cat: 'essencias',  name: 'Fumari Ambrosia 100g',            desc: 'Premium americano com notas de frutas tropicais e mel',               price: 78,  img: null },
+  { id: 4,  cat: 'essencias',  name: 'Al Fakher Duplo Maçã 250g',       desc: 'Clássico sabor duplo maçã, fumaça densa e sabor equilibrado',         price: 48,  img: './produtos/al-fakher-maca.webp' },
+  { id: 5,  cat: 'essencias',  name: 'Adalya Love 66 200g',             desc: 'Blend de morango, menta e melancia — um dos mais pedidos',            price: 58,  img: './produtos/adalya-love66.webp' },
+  { id: 6,  cat: 'essencias',  name: 'Fumari Ambrosia 100g',            desc: 'Premium americano com notas de frutas tropicais e mel',               price: 78,  img: './produtos/fumari-ambrosia.png' },
   { id: 7,  cat: 'essencias',  name: 'Social Smoke Absolute Zero 250g', desc: 'Mentol puro e intenso. Zero açúcar, muita fumaça',                    price: 65,  img: null },
   // CARVÃO
   { id: 8,  cat: 'carvao',     name: 'Carvão Coconara Natural 1kg',     desc: 'Carvão de coco prensado, queima lenta e sem interferência de sabor',  price: 38,  img: null },
