@@ -1503,8 +1503,22 @@ const CAT_ICONS = {
 /* ─────────────────────────────────────────────────────────
    STATE
 ───────────────────────────────────────────────────────── */
+/* Prevents browser from restoring the previous scroll position on refresh */
+history.scrollRestoration = 'manual';
+
+const CART_KEY = 'vero_cart';
+
+function loadCart() {
+  try { return JSON.parse(localStorage.getItem(CART_KEY)) || []; }
+  catch { return []; }
+}
+function saveCart() {
+  try { localStorage.setItem(CART_KEY, JSON.stringify(state.cart)); }
+  catch {}
+}
+
 const state = {
-  cart: [],
+  cart: loadCart(),
   activeCategory: 'all',
   cartOpen: false,
   checkoutOpen: false,
@@ -1712,6 +1726,7 @@ function addToCart(productId, qty) {
     if (!p) return;
     state.cart.push({ id: p.id, name: p.name, price: p.price, cat: p.cat, qty });
   }
+  saveCart();
   renderCart();
   updateCartBadge();
   openCart();
@@ -1722,12 +1737,14 @@ function updateCartQty(productId, delta) {
   if (!item) return;
   item.qty = Math.max(0, item.qty + delta);
   if (item.qty === 0) state.cart = state.cart.filter(i => i.id !== productId);
+  saveCart();
   renderCart();
   updateCartBadge();
 }
 
 function removeFromCart(productId) {
   state.cart = state.cart.filter(i => i.id !== productId);
+  saveCart();
   renderCart();
   updateCartBadge();
 }
@@ -2126,6 +2143,7 @@ function initMenubar() {
    INIT
 ───────────────────────────────────────────────────────── */
 function init() {
+  window.scrollTo({ top: 0, behavior: 'instant' });
   initAge();
   initHeader();
   initWhatsAppLinks();
